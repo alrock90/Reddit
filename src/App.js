@@ -1,14 +1,44 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+//import { Counter } from './features/counter/Counter';
+import { useDispatch, useSelector } from "react-redux";
 import './App.css';
+import { Header } from './features/Header/Header';
+import { Card } from './features/Card/Card';
+import { LeftMenu } from './features/LeftMenu/LeftMenu';
+import { startGetPost} from './store/redditSlice'
+import { Posts } from "./features/Posts/Posts";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Header />
+
+      <div className='main'>
+        <div className='sidebar'>
+          <LeftMenu />
+        </div>
+        <div className="posts">
+          <Posts />
+        </div>
+
+
+      </div>
+
+
+
+
+    </div>
+  );
+}
+
+export default App;
+
+/*
+
+      <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
+        
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -50,9 +80,7 @@ function App() {
             React Redux
           </a>
         </span>
-      </header>
-    </div>
-  );
-}
+      </div>
 
-export default App;
+
+*/

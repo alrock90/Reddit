@@ -1,0 +1,7 @@
+.leftMenu {
+  background-color: #a6f8b6;
+  color: #000000;  
+  left: 0rem;  
+  height: 100%;
+  z-index: 50;
+}

@@ -12,7 +12,6 @@
     animation: App-logo-float infinite 3s ease-in-out;
   }
 }
-
 .App-header {
   min-height: 100vh;
   display: flex;
@@ -20,6 +19,24 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+}
+
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #79e58e;
+  color: #000000;      
+  position: sticky;
+  width: 100%;  
+  top: 0rem;
+  z-index: 100;
+  max-height: 10vh;
+}
+header h1{
+  margin-right: 2rem;
 }
 
 .App-link {
@@ -36,4 +53,25 @@
   100% {
     transform: translateY(0px);
   }
+}
+
+.main{
+  position: relative;  
+  display: flex;
+}
+
+.sidebar{
+  position: sticky;
+  top: 10vh;
+  z-index: 1;
+  display: flex;
+  height: 90vh;
+  max-width: 20%;
+}
+
+.posts{
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 150px;
+  width: 100%;
 }

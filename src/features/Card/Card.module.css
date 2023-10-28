@@ -1,0 +1,39 @@
+.card{
+    margin: 4rem;
+    border: 1px solid black;
+    margin: 2rem 2rem; 
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;  
+    box-shadow: 2px 2px 2px 1px  gray;
+
+    
+}
+
+.cardTop{
+    display: flex;
+    flex-direction: row;
+}
+.imgPost{
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.imgPost img{
+    background-color: blue;
+    width: 100%;    
+}
+
+.cardSub{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 20px 0px;
+}
+
+.iconAction{
+    background: transparent ;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    
+}
