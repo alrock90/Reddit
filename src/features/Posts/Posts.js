@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
+import Skeleton from 'react-loading-skeleton';   //npm install react-loading-skeleton
+                   
 
 import Styles from './Posts.module.css'
 import { Card } from "../Card/Card";
-import { startGetPost } from '../../store/redditSlice'
+import { startGetAllPosts, selectAllPostFilter } from '../../store/redditSlice'
 
 export const Posts = () => {
 
@@ -11,12 +13,13 @@ export const Posts = () => {
     const dispatch = useDispatch();
 
     const reddit = useSelector((state) => state.reddit);
-    const { selectedSubreddit, post, isLoading } = reddit;
+    const { selectedSubreddit,  isLoading } = reddit;
+    const allPostFilter = useSelector(selectAllPostFilter);
 
     
         useEffect(() => {
             console.log("entre:")
-            dispatch(startGetPost(selectedSubreddit));
+            dispatch(startGetAllPosts(selectedSubreddit));
         }, [selectedSubreddit]);
     
         
@@ -31,10 +34,10 @@ export const Posts = () => {
         <div >
            {
                 isLoading ?
-                    <p>Loading</p> :
-                    post.map((card) => (
-                        <Card key={card.id} card={card}  />
-                    ))
+                <p>Loading</p> :
+                allPostFilter.map((card,index) => (
+                    <Card key={card.id} card={card} index={index} />
+                ))
             }
         </div>
     )
