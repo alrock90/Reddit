@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import Skeleton from 'react-loading-skeleton';   //npm install react-loading-skeleton
+
                    
 
 import Styles from './Posts.module.css'

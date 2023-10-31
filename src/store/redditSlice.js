@@ -36,7 +36,10 @@ export const redditSlice = createSlice({
             state.searchTerm = action.payload
         },
         toggleShowingComments:(state,action) => {
-            state.allPosts[0].showingComments=false;
+            state.allPosts[action.payload].showingComments=false;
+        },
+        changeSubreddit:(state,action) => {
+            state.selectedSubreddit=action.payload;
         }
     },
     extraReducers: (builder) => {
@@ -81,7 +84,7 @@ export const redditSlice = createSlice({
 
     }
 });
-export const { changeSearchTerm, toggleShowingComments } = redditSlice.actions;  //reducers
+export const { changeSearchTerm, toggleShowingComments,changeSubreddit } = redditSlice.actions;  //reducers
 
 export const selectSelectedSubreddit = (state) => state.reddit.selectedSubreddit; 
 
