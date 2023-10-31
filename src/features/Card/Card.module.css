@@ -21,7 +21,7 @@
 
 .imgPost img{
     background-color: blue;
-    width: 100%;    
+    max-width: 900px;    
 }
 
 .cardSub{

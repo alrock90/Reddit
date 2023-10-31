@@ -104,7 +104,7 @@ export const Card = ({ card, index }) => {
                     </button>
                 </div>
                 <div className={Styles.imgPost}>
-                    {error ? null : <img src={card.url} onError={handleError} />}
+                    {error ? null : <img src={card.url} alt =""  onError={handleError} />}
 
                 </div>
             </div>
