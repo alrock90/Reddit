@@ -67,8 +67,7 @@ export const LeftMenu = () => {
                 enterActive: Styles.navEnterActive,
                 exitActive: Styles.navExitActive,
                 exit: Styles.navExit,
-            }}
-        >
+            }}>
             <nav className={Styles.leftMenu} ref={nodeRef2}>
                 <CSSTransition
                     in={navBarActive}

@@ -1,42 +1,56 @@
-.card{
+.card {
     margin: 4rem;
-    
-    margin: 2rem 2rem; 
+
+    margin: 1.5rem 2rem;
     padding: 0.5rem 0.5rem;
-    border-radius: 0.5rem;  
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05)!important;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
     background-color: #D2E3C8;
-    
-  transition: all 3s;
+
+    transition: all 3s;
 }
 
-.cardTop{
+.cardTop {
     display: flex;
     flex-direction: row;
 }
-.imgPost{
+
+.imgPost {
     margin: 0 auto;
     padding: 1rem;
 }
 
-.imgPost img{
-    background-color: blue;
-    max-width: 900px;    
+.imgPost img {
+    max-width: 100%;
+    height: auto;
 }
 
-.cardSub{
+.cardSub {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0px 20px 0px;
 }
 
-.iconAction{
-    background: transparent ;
+.iconAction {
+    background: transparent;
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
-    
+
 }
 
+@media (max-width: 768px) {
+    .card {
+        margin: 1.5rem 0.5rem;
+        padding: 0.1rem 0.1rem;
+        width: auto;
+    }
 
+
+    .iconAction {
+        font-size: 1.2rem;
+    }
+
+    /* También puedes modificar otros estilos, como el ancho de elementos o la disposición de elementos en la página */
+}
