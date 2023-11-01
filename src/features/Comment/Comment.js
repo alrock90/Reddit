@@ -1,5 +1,6 @@
 import Styles  from './comment.module.css'
 import moment from 'moment'; //npm install moment
+import ReactMarkdown from 'react-markdown';
 
 export const Comment = ({ comment }) => {
 
@@ -11,7 +12,8 @@ export const Comment = ({ comment }) => {
                 <p>{`Posted by: ${comment.author}`}</p>
                 <p>{moment.unix(comment.created_utc).fromNow()} </p>              
             </div>
-            <p>{comment.body} </p>
+            <ReactMarkdown>{String(comment.body)}</ReactMarkdown>
+
         </div>
     )
 }
