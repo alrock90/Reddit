@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import Styles from "./LeftMenu.module.css"
-import reddit from "../../api/reddit"
 import { getSubtopics } from "../../store/subredditSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { changeSubreddit } from "../../store/redditSlice";
@@ -39,7 +38,7 @@ export const LeftMenu = () => {
                     {subtopics.map((sub) => (
                         <button onClick={() => onClickTopic(sub.url)} className={Styles.topic}>
                             <div className={Styles.imgtitle}>
-                                <img src={sub.header_img} />
+                                <img src={sub.header_img} alt="imageCard"/>
                             </div>
                             {navBarActive && <p  >{sub.display_name}</p>}
 

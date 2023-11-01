@@ -32,6 +32,7 @@ export const Header = () => {
                 <button
                     type="submit"
                     onClick={onSearchTermSubmit}
+                    aria-label="Search"
                 >Search</button>
             </form>
         </header>

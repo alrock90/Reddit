@@ -16,7 +16,7 @@ import { Comment } from "../Comment/Comment";
 
 
 export const Card = ({ card, index }) => {
-    const [error, setError] = useState(false);    
+    const [error, setError] = useState(false);
     const [arrowDirection, setArrowDirection] = useState(0)
     const dispatch = useDispatch();
 
@@ -71,7 +71,7 @@ export const Card = ({ card, index }) => {
             return (
                 <div>
                     {card.comments.map(comment => (
-                        <Comment comment={comment} />
+                        <Comment comment={comment} key={comment.id}/>
                     ))
                     }
                 </div>
@@ -88,23 +88,25 @@ export const Card = ({ card, index }) => {
 
     return (
         <div className={Styles.card}>
-            <h3>{card.title}</h3>
+            <h2>{card.title}</h2>
             <div className={Styles.cardTop}>
                 <div className="cardlike">
                     <button
+                        aria-label="VoteUp"
                         className={Styles.iconAction}
                         onClick={() => onClickarrow(1)}>
                         {arrowUp()}
                     </button>
                     <p>{numberFormat(card.ups)}</p>
                     <button
+                        aria-label="VoteDown"
                         className={Styles.iconAction}
                         onClick={() => onClickarrow(-1)}>
                         {arrowDown()}
                     </button>
                 </div>
                 <div className={Styles.imgPost}>
-                    {error ? null : <img src={card.url} alt =""  onError={handleError} />}
+                    {error ? null : <img src={card.url} loading="lazy" alt="" onError={handleError} />}
 
                 </div>
             </div>
@@ -113,6 +115,7 @@ export const Card = ({ card, index }) => {
                 <p>{`Posted by: ${card.author}`}</p>
                 <p>{moment.unix(card.created_utc).fromNow()} </p>
                 <button
+                    aria-label="Comments"
                     className={Styles.iconAction}
                     onClick={onClickComments}>
                     <TiMessages />
