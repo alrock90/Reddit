@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
-import logo from './logo.svg';
+import React from "react";
+//import logo from './logo.svg';
 //import { Counter } from './features/counter/Counter';
-import { useDispatch, useSelector } from "react-redux";
 import './App.css';
 import { Header } from './features/Header/Header';
-import { Card } from './features/Card/Card';
 import { LeftMenu } from './features/LeftMenu/LeftMenu';
-import { startGetPost} from './store/redditSlice'
 import { Posts } from "./features/Posts/Posts";
 
 function App() {

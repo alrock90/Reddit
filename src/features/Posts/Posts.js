@@ -1,9 +1,5 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-
-                   
-
-import Styles from './Posts.module.css'
 import { Card } from "../Card/Card";
 import { startGetAllPosts, selectAllPostFilter } from '../../store/redditSlice'
 
@@ -20,7 +16,7 @@ export const Posts = () => {
         useEffect(() => {
             console.log("entre:")
             dispatch(startGetAllPosts(selectedSubreddit));
-        }, [selectedSubreddit]);
+        }, [selectedSubreddit],dispatch);
     
         
 
