@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { changeSearchTerm } from '../../store/redditSlice'
 import { useDispatch } from "react-redux";
-
+import { FaReddit } from "react-icons/fa"
 
 export const Header = () => {
     const dispatch = useDispatch();
@@ -21,6 +21,7 @@ export const Header = () => {
 
     return (
         <header>
+            <FaReddit className="App-logo"/>
             <h1>Reddit</h1>
             <form onSubmit={onSearchTermSubmit}>
                 <input

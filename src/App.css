@@ -2,8 +2,8 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.App-logo { 
+  font-size: 3rem;
   pointer-events: none;
 }
 
@@ -40,19 +40,50 @@ header h1{
   margin-right: 2rem;
 }
 
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+  header {
+    display: flex;    
+    align-items: center;
+    justify-content: left;
+  }
+  
+  
+  .App-logo {
+    margin: 0 10px; /* Añade un margen a la derecha del icono */
+  }
+  
+  form {    
+    max-width: 30px;
+    display: flex;
+  }
+  
+  input {
+    width: 120px;
+  }
+  
+  button {    
+    margin-left: 10px; /* Añade un margen a la izquierda del botón */
+  }
+}
+
+
+
+
+
 .App-link {
   color: rgb(112, 76, 182);
 }
 
 @keyframes App-logo-float {
   0% {
-    transform: translateY(0);
+    transform: translateY(0)  ;
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(10px) rotate(120deg);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(360deg);
   }
 }
 

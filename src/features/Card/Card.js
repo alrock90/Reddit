@@ -71,7 +71,7 @@ export const Card = ({ card, index }) => {
             return (
                 <div>
                     {card.comments.map(comment => (
-                        <Comment comment={comment} key={comment.id}/>
+                        <Comment comment={comment} key={comment.id} />
                     ))
                     }
                 </div>
@@ -114,12 +114,15 @@ export const Card = ({ card, index }) => {
             <div className={Styles.cardSub}>
                 <p>{`Posted by: ${card.author}`}</p>
                 <p>{moment.unix(card.created_utc).fromNow()} </p>
-                <button
-                    aria-label="Comments"
-                    className={Styles.iconAction}
-                    onClick={onClickComments}>
-                    <TiMessages />
-                </button>
+                <div className={Styles.commentIconNum}>
+                    <button
+                        aria-label="Comments"
+                        className={Styles.iconAction}
+                        onClick={onClickComments}>
+                        <TiMessages />
+                    </button>
+                    <p>{numberFormat(card.num_comments)}</p>
+                </div>
             </div>
             <div className={Styles.comments}>
                 {showComments()}

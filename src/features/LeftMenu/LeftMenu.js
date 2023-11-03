@@ -3,8 +3,9 @@ import Styles from "./LeftMenu.module.css"
 import { getSubtopics } from "../../store/subredditSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { changeSubreddit } from "../../store/redditSlice";
-import { TiArrowRightThick } from "react-icons/ti";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { CSSTransition } from "react-transition-group";
+import { FaReddit } from "react-icons/fa"
 
 export const LeftMenu = () => {
     const dispatch = useDispatch();
@@ -38,7 +39,7 @@ export const LeftMenu = () => {
                     {subtopics.map((sub) => (
                         <button onClick={() => onClickTopic(sub.url)} className={Styles.topic}>
                             <div className={Styles.imgtitle}>
-                                <img src={sub.header_img} alt="imageCard"/>
+                                {sub.header_img != null ? <img src={sub.header_img} alt="imageCard"/> : <FaReddit className={Styles.icon} />}                                
                             </div>
                             {navBarActive && <p  >{sub.display_name}</p>}
 
@@ -73,17 +74,19 @@ export const LeftMenu = () => {
                     nodeRef={nodeRef}
                     timeout={500}
                     classNames={{
+                        enterDone: Styles.enterDone,
                         enter: Styles.enter,
                         enterActive: Styles.enterActive,
                         exitActive: Styles.exitActive,
                         exit: Styles.exit,
+                        exitDone: Styles.exitDone,
                     }}
                 >
                     <button
                         className={Styles.rotate}
                         onClick={() => onClickArrow()}
                         ref={nodeRef}>
-                        <TiArrowRightThick />
+                        <MdKeyboardDoubleArrowRight />
                     </button>
 
                 </CSSTransition>
